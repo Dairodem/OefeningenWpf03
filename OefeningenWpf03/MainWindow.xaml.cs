@@ -20,6 +20,7 @@ namespace OefeningenWpf03
     {
         string[] ages = new string[] { "Bejaarde", "Volwassen", "Minderjarige" };
         string[] sexes = new string[] { "Man", "Vrouw" };
+        string colorText = "";
         List<Persoon> personen = new List<Persoon>();
         Image online = new Image();
         Image offline = new Image();
@@ -43,7 +44,10 @@ namespace OefeningenWpf03
 
             foreach (Persoon persoon in personen)
             {
-                persoon.SetImage();
+                if (persoon.LoggedIn)
+                    persoon.Status = @"G:\Documents\Coding\Pics\Online.png";
+                else
+                    persoon.Status = @"G:\Documents\Coding\Pics\offline.png";
             }
 
             LbxLogin.ItemsSource = personen;
@@ -92,6 +96,25 @@ namespace OefeningenWpf03
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             TxtOef4.Text = "";
+        }
+
+        private void BtnColors_Click(object sender, RoutedEventArgs e)
+        {
+            colorText = "";
+            CheckBoxes(CbRed);
+            CheckBoxes(CbOra);
+            CheckBoxes(CbGre);
+            CheckBoxes(CbBlu);
+
+            MessageBox.Show(colorText);
+
+        }
+        private void CheckBoxes(CheckBox cbx)
+        {
+            if ((bool)cbx.IsChecked)
+            {
+                colorText += $"{cbx.Content}\n";
+            }
         }
     }
 }

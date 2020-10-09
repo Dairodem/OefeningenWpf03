@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OefeningenWpf03"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600" Loaded="Window_Loaded">
+        Title="MainWindow" Height="550" Width="600" Loaded="Window_Loaded">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -17,12 +17,11 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition/>
-                <RowDefinition/> 
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="1" Grid.Row="1" Margin="5,1" Text=" Oefening 1 " FontWeight="Bold" Background="FloralWhite"/>
@@ -31,7 +30,6 @@
             <TextBlock Grid.Column="1" Grid.Row="4" Margin="5,1" Text=" Oefening 4 " FontWeight="Bold" Background="FloralWhite"/>
             <TextBlock Grid.Column="1" Grid.Row="5" Margin="5,1" Text=" Oefening 5 " FontWeight="Bold" Background="FloralWhite"/>
             <TextBlock Grid.Column="1" Grid.Row="6" Margin="5,1" Text=" Oefening 6 " FontWeight="Bold" Background="FloralWhite"/>
-            <TextBlock Grid.Column="1" Grid.Row="7" Margin="5,1" Text=" Oefening 7 " FontWeight="Bold" Background="FloralWhite"/>
     
             <!--Oefening 1-->
             <StackPanel Grid.Column="2" Grid.Row="1">
@@ -63,7 +61,7 @@
             </StackPanel>
             
             <!--Oefening 4 -->
-            <StackPanel Grid.Column="2" Grid.Row="4">
+            <StackPanel Grid.Column="2" Grid.Row="4" Margin="5,10">
                 <Menu>
                     <MenuItem Header="Edit">
                         <MenuItem x:Name="BtnClear" Header="Clear" Click="BtnClear_Click"></MenuItem>
@@ -77,11 +75,11 @@
             </StackPanel>
             
             <!--Oefening 5-->
-            <ListBox x:Name="LbxLogin" Grid.Column="2" Grid.Row="5">
+            <ListBox x:Name="LbxLogin" Grid.Column="2" Grid.Row="5" Margin="5">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding Status}" Width="30" Height="30"/>
+                            <Image Source="{Binding Status}" Width="20" Height="20"/>
                             <TextBlock  Text=" "/>
                             <TextBlock  Text="{Binding Voornaam}"/>
                             <TextBlock  Text=" "/>
@@ -89,14 +87,17 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-
             </ListBox>
             
             <!--Oefening 6-->
-            <StackPanel Grid.Column="2" Grid.Row="6" Margin="5">
-                
+            <StackPanel Grid.Column="2" Grid.Row="6" Margin="10">
+                <CheckBox x:Name="CbRed" Content="Rood" Foreground="Red"/>
+                <CheckBox x:Name="CbOra" Content="Oranje" Foreground="Orange"/>
+                <CheckBox x:Name="CbGre" Content="Groen" Foreground="Green"/>
+                <CheckBox x:Name="CbBlu" Content="Blauw" Foreground="Blue"/>
+                <Button x:Name="BtnColors" Content="Go!" Margin="5" Width="100" HorizontalAlignment="Left" Click="BtnColors_Click"/>
             </StackPanel>
-
+            
 
         </Grid>
 

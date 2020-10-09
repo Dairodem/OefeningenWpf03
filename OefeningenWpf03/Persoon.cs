@@ -13,19 +13,6 @@ namespace OefeningenWpf01
         public bool LoggedIn { get; set; }
         public string Status { get; set; }
 
-        public Persoon()
-        {
-            SetImage();
-        }
-
-        public void SetImage()
-        {
-            if (LoggedIn)
-                Status = @"G:\Documents\Coding\Pics\Online.png";
-            else
-                Status = @"G:\Documents\Coding\Pics\offline.png";
-
-        }
 
     }
 }
